@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Main Page</title>
+  </head>
+  <body>
+    <h1>Enter the Email Address</h1>
+    <form class="" action="/add" method="POST">
+      <label for="email"><input type="text" name = 'email' id='emailid'</label>
+      <input type="submit" name="" value="Enter Email">
+      {% with messages = get_flashed_messages() %}
+       {% if messages %}
+           {% for message in messages %}
+               <p error>{{ message }}</p>
+           {% endfor %}
+       {% endif %}
+   {% endwith %}
+    </form>
+  </body>
+</html>
