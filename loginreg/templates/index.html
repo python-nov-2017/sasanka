@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Registration</title>
+  </head>
+  <body>
+  <fieldset>
+    {% with messages = get_flashed_messages() %}
+         {% if messages %}
+             {% for message in messages %}
+                 <p error>{{ message }}</p>
+             {% endfor %}
+         {% endif %}
+     {% endwith %}
+      <legend>Register</legend>
+      <form class="" action="/register" method="POST">
+        <input type="text" name="first_name"  placeholder="first_name" >
+        <input type="text" name="last_name" placeholder="last_name">
+        <input type="text" name="email"  placeholder="email">
+        <input type="text" name="username" placeholder="username" >
+        <input type="text" name="password" placeholder="password" >
+        <input type="text" name="confirm_password"  placeholder="confirm_password">
+        <input type="submit" name="" value="submit">
+      </form>
+  </fieldset>
+  <fieldset>
+      <legend>Login</legend>
+      <form class="" action="/login" method="post">
+        <input type="text" name="username"  placeholder="">
+        <input type="text" name="password"  placeholder="">
+        <input type="text" name="confirm_password"  placeholder="">
+        <input type="submit" name="" value="submit">
+      </form>
+  </fieldset>
+  <fieldset>
+    <legend>Logout</legend>
+    <form class="" action="/logout">
+      <input type="submit" name="" value="Logout">
+    </form>
+  </fieldset>
+  </body>
+</html>
